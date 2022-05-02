@@ -23,8 +23,8 @@ icon: https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_TU_Bergakademie_F
 
 ## Aufgaben
 
-### Aufgabe
-
 {{1}}
+
+### Aufgabe
 
 - [ ] Fertig machen (readme)
