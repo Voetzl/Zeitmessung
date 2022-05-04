@@ -1,26 +1,44 @@
+#include <avr\io.h>
+#include "initialisation.h"
 #include <Arduino.h>
 
+//Benutzersteuerung: Zwei Schalter mit vier Zuständen, nc (da Arduino nur Pull-Up)
 
+void input_received(){ //Zeitverzögerung, sobald Befehl an Steuereinheit gesendet wurde
 
+    _delay_ms(1500);
+}
 
 
 int main(void){
 
-    DDRB |= (1 << DDB3); //LEDs
-    DDRB |= (1 << DDB2);
-    DDRB |= (1 << DDB1);
+    initialisation();
 
-int i;
-for (int l = 0; l < 5; i++){
+    while(1){
+        if (PIND & (1 << TASTER_2) && PIND & (1 << TASTER_1)){
+            PORTB |= (1 << LED_R);
+            input_received();
+        }
+        else if (PIND & (1 << TASTER_1)){
+            PORTB |= (1 << LED_G);  
+            PORTB |= (1 << BtoS_1);
+            input_received();          
+        }
+        else if (PIND & (1 << TASTER_2)){
+            PORTB |= (1 << LED_B);
+            PORTB |= (1 << BtoS_1);
+            input_received();
+        }
+        else {
+            PORTB |= (1 << LED_R);
+            PORTB |= (1 << LED_B);
+        }
 
-    PORTB |= (1 << PB3);
-    PORTB |= (1 << PB2);
-    PORTB |= (1 << PB1);
-    _delay_ms(500);
-    PORTB &= ~(1 << PB3);
-    PORTB &= ~(1 << PB2);
-    PORTB &= ~(1 << PB1);
-    _delay_ms(500);
-}
+        //LED resetten
+        PORTB &= ~(1 << LED_R);
+        PORTB &= ~(1 << LED_G);
+        PORTB &= ~(1 << LED_B);       
+    }
+    
 
 }
