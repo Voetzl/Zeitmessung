@@ -39,5 +39,8 @@ void initialisation(){
     //Steuereinheit
     DDRB |= (1 << BtoS_1); 
     DDRB |= (1 << BtoS_2);
+    //Standard: HIGH
+    PORTD |= (1 << BtoS_1);
+    PORTD |= (1 << BtoS_2); 
 
 }

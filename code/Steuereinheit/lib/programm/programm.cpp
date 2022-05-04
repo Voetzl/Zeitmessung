@@ -1,8 +1,8 @@
 #include <avr\io.h>
-#include "initialisieren.h"
+#include "initialisation.h"
 #include <util/delay.h>
 
-void derrest(){
+/*void derrest(){
     int i = 1;
         while(i == 1){
         PORTB |= (1 << LED_R); //rote LED: Noch nicht gestartet!
@@ -32,3 +32,4 @@ void derrest(){
 
         _delay_ms(500); //Wartezeit Boot-Up
 }
+*/

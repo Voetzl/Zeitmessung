@@ -1,12 +1,25 @@
-#include "initialisieren.h"
+#include "initialisation.h"
 #include "programm.h"
 
 int main(void){
+
+  initialisation(); //Initialisierung
   
   while(1){
-    einfachnurinitialisieren(); //Initialisierung
-    derrest(); //Eigentliches Programm  
+    
+    if(PIND & (1 << DATA_1)){
+      PINB |= (1 << LED_B);
+    }
+    else{
+      PINB |= (1 << LED_G);
+    }
+    
+    
+    
+    
+    
+    //derrest(); //Eigentliches Programm  
   }
 
   return 0;
-}  
+}
