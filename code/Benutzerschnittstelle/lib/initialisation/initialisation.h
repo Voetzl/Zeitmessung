@@ -7,7 +7,6 @@
 #define TASTER_2 DDD6
 #define BtoS_1 DDD2 //Benutzeroberfläche to Steuereinheit
 #define BtoS_2 DDD3
-
 #define INIT_DELAY 500
 
 

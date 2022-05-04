@@ -29,8 +29,8 @@ void initialisation(){
     DDRD &= ~(1 << DATA_1); //Inputs Benutzerschnittstelle
     DDRD &= ~(1 << DATA_2);
     //Pull up
-    PORTD |= (1 << DATA_1);
-    PORTD |= (1 << DATA_2);
+    //PORTD |= (1 << DATA_1);
+    //PORTD |= (1 << DATA_2);
 
     PORTD |= (1 << RUPT_1);   //Damit PINS_RUPT am Anfang an
     PORTD |= (1 << RUPT_2);

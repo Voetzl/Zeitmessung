@@ -14,6 +14,9 @@ int main(void){
       PINB |= (1 << LED_G);
     }
     
+
+    PINB &= ~(1 << LED_G);
+    PINB &= ~(1 << LED_B);
     
     
     

@@ -7,7 +7,7 @@
 #define DATA_2 DDD3
 #define RUPT_1 DDD4 //interrupts für Arduino-Interrupt
 #define RUPT_2 DDD5
-#define INIT_DELAY 1500
+#define INIT_DELAY 500
 
 
 void initialisation();
