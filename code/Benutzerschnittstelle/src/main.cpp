@@ -9,6 +9,17 @@ void input_received(){ //Zeitverzögerung, sobald Befehl an Steuereinheit gesend
     _delay_ms(1500);
 }
 
+void pin_reset(){
+
+    //LED resetten
+    PORTB &= ~(1 << LED_R);
+    PORTB &= ~(1 << LED_G);
+    PORTB &= ~(1 << LED_B);  
+    //PORT's resetten
+    PORTD &= ~(1 << BtoS_1);
+    PORTD &= ~(1 << BtoS_2);  
+}
+
 
 int main(void){
 
@@ -21,12 +32,12 @@ int main(void){
         }
         else if (PIND & (1 << TASTER_1)){
             PORTB |= (1 << LED_G);  
-            PORTB |= (1 << BtoS_1);
+            PORTD |= (1 << BtoS_1);
             input_received();          
         }
         else if (PIND & (1 << TASTER_2)){
             PORTB |= (1 << LED_B);
-            PORTB |= (1 << BtoS_1);
+            PORTD |= (1 << BtoS_1);
             input_received();
         }
         else {
@@ -34,10 +45,8 @@ int main(void){
             PORTB |= (1 << LED_B);
         }
 
-        //LED resetten
-        PORTB &= ~(1 << LED_R);
-        PORTB &= ~(1 << LED_G);
-        PORTB &= ~(1 << LED_B);       
+        pin_reset();
+   
     }
     
 
