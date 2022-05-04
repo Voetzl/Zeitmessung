@@ -5,8 +5,8 @@
 #define LED_B DDB3
 #define TASTER_1 DDD7
 #define TASTER_2 DDD6
-#define BtoS_1 DDD1 //Benutzeroberfläche to Steuereinheit
-#define BtoS_2 DDD2
+#define BtoS_1 DDD2 //Benutzeroberfläche to Steuereinheit
+#define BtoS_2 DDD3
 #define INIT_DELAY 1000
 
 
