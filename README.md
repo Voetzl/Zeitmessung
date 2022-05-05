@@ -87,7 +87,7 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 **Steuereinheit:**
 
-- Verarbeitung des Signal-Modus und Ausführung der zugehörigen `double` bzw. `float` oder diversen anderen Berechnungen
+- Verarbeitung des Signal-Modus und Ausführung der zugehörigen `double` bzw. `float` oder diverser anderer Berechnungen
 
 ### Zukünftige Pläne
 
