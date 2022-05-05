@@ -1,4 +1,6 @@
+
 <!--
+
 author:   Fabian Bart, Bastian Zötzel
 email:    zeitmessung@informatic-freak.de
 
@@ -11,53 +13,101 @@ import:  https://raw.githubusercontent.com/liascript-templates/plantUML/master/R
          https://github.com/LiaTemplates/Pyodide
 
 icon: https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_TU_Bergakademie_Freiberg.svg
--->
 
+-->
 
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://github.com/Voetzl/Zeitmessung/blob/main/README.md)
 
-
 # Zeitmessung
 
-So funktioniert's: Die drei Unterordner in "code" beschreiben jeweils ein Platformio-Projekt für einen Arduino. Zu dritt bilden diese eine Zeitmessung. 
-Hier ein Auszug aus einem Forum über das Zusammenspiel:
+![es blinkt](docs/es-blinkt.gif)
 
-Aktuelle Version auf Git (18:00 MEZ):
+**So funktioniert's:**
 
--- Messeinheit gesteuert durch Interrupts: Misst Zeit zwischen Interrupt 0 und Interrupt 1.
--- Benutzeroberfläche: 2 Taster so geschaltet, dass drei verschiedene Ausgangssignale erzeugt werden können (einer, beide), wobei die einer-gedrückt-Stellung jeweils an die Steuereinheit weitergegeben wird
--- Steuereinheit: Unfunktionabel
+Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.org/)-Projekten für den [Arduino Uno](https://store.arduino.cc/products/arduino-uno-rev3).
 
- 
+>Wir freuen uns auf Commits, Issues, Teil-Implementationen, Ideen, ...
 
-In der Pipeline (hoffentlich bis heute Abend, Updates hier im Forum):
+## Bestandteile
 
--- Benutzerschnittstelle: 2 Taster binär geschaltet für 4 Signale, die an Steuereinheit weitergegeben werden können
+<!-- style="display: block; margin-left: auto; margin-right: auto; /*max-width: 315px;*/" -->
+```ascii
++-----------------------+            +---------------+                 +-------------+
+|                       |            |               |                 |             |
+| Benutzerschnittstelle | --Modus--> | Steuereinheit | --Interrupts--> | Messeinheit |
+|                       |            |               |                 |             |
++-----------------------+            +---------------+                 +-------------+
+```
 
--- Steuereinheit: Je nach Signaleingang double- float- oder diverse andere Berechnung (Erweiterungspotential), bei Start und Ende jeweils Ausgabe für Messeinheit
+{{0}}
 
--- Messeinheit: Keine Änderung geplant, möglicherweise noch bessere Zeitdauerausgabe.
+**Messeinheit:**
 
- 
+- misst vergangene Zeit zwischen zwei ausgelösten externen Interrupts
 
-Zukunft (In Bezug auf Übungsaufgabe, kein Zeitrahmen, Änderung vorbehalten):
+{{1}}
 
--- Benutzerschnittstelle: Joystick und Ultraschallsensor jeweils über ADC angeschlossen, Datenweitergabe an Steuereinheit. 
+**Benutzerschnittstelle:**
 
-                   //Zusätzliches Feature, Taster bleiben erhalten, voraussichtlich "Beide gedrückt" als Umschalten zwischen "Joystick-Daten" und "Trigger double/float-Berechnung"
+- 2 Taster werden zur Kodierung von drei verschiedenen Ausgangssignal-Modi verwendet
+	- `01`: [MODUS 1]
+	- `10`: [MODUS 2]
+	- `11`: [MODUS 3]
 
--- Steuereinheit: Joystick-Daten sollen die mehrfarbige LED steuern, Ultraschallsensordaten sollen bei Betreten eines bestimmten Bereichs "RUPT_0" triggern, bei Verlassen "RUPT_1"
+- sendet gewählten Modus an *Steuereinheit*
 
-                  //Zusätzliches Feature, Berechnungen float/double bleiben erhalten. (Fragwürdig ob sich der Aufwand lohnt, die Daten hier zu übertragen oder ob das doch am selben Arduino geschehen soll. Generelles Problem ist hier aber sowieso die LED-Ansteuerung über PWM-Signale.)
+{{2}}
 
--- Messeinheit: Keine Änderung geplant. Möglicherweise Ausgabeverbesserung: Weitergabe über dritten PIN, ob gerade float/double-Berechungszeit oder Näherungszeit gemessen wird
+**Steuereinheit:**
 
- 
+- verabeitet den Modus und führt zugehörige Aktionen aus
 
-Wir freuen uns auf Commits, Issues, Teil-Implementationen, Ideen,...
+## Änderungen & Pläne
 
----
+### Geplante Änderungen
 
-## Aufgaben
+{{0}}
 
-- [ ] Fertig machen (readme)
+**Messeinheit:**
+
+- bessere Darstellung der Messergebnisse
+
+{{1}}
+
+**Benutzerschnittstelle:**
+
+- Verarbeitung der Taster-Eingaben und weitergabe an die Steuereinheit
+
+{{2}}
+
+**Steuereinheit:**
+
+- Verarbeitung des Signal-Modus und Ausführung der zugehörigen `double` bzw. `float` oder diversen anderen Berechnungen
+
+### Zukünftige Pläne
+
+{{0}}
+
+**Messeinheit:**
+
+- Keine Änderung geplant. Möglicherweise Ausgabeverbesserung: Weitergabe über dritten PIN, ob gerade float/double-Berechungszeit oder Näherungszeit gemessen wird
+
+{{1}}
+
+**Benutzerschnittstelle:**
+
+- Joystick und Ultraschallsensor jeweils über `ADC` angeschlossen, Datenübertragung an Steuereinheit
+
+>*Zusätzliche Features:*
+>
+>Taster bleiben erhalten, voraussichtlich "Beide gedrückt" als Umschalten zwischen "Joystick-Daten" und "Trigger double/float-Berechnung"
+
+{{2}}
+
+**Steuereinheit:**
+
+- Joystick-Daten sollen die mehrfarbige LED steuern, Ultraschallsensordaten sollen bei Betreten eines bestimmten Bereichs `INT0` triggern, bei Verlassen `INT1`
+
+>*Zusätzliche Features:*
+>
+>Berechnungen float/double bleiben erhalten. (Fragwürdig ob sich der Aufwand lohnt, die Daten hier zu übertragen oder ob das doch am selben Arduino geschehen soll. Generelles Problem ist hier aber sowieso die LED-Ansteuerung über PWM-Signale.)
