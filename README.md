@@ -30,7 +30,7 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 ## Bestandteile
 
-<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 500px;" -->
+<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 ```ascii
 +-----------------------+              +---------------+                   +-------------+
 |                       |              |               |                   |             |
@@ -46,7 +46,10 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - misst vergangene Zeit zwischen zwei ausgelösten externen Interrupts
 
+********************************************************************************
+
                           {{1-3}}
+********************************************************************************
 
 **Benutzerschnittstelle:**
 
@@ -57,12 +60,16 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - sendet gewählten Modus an Steuereinheit
 
+********************************************************************************
+
                           {{2-3}}
 ********************************************************************************
 
 **Steuereinheit:**
 
 - verabeitet den Modus und führt zugehörige Aktionen aus
+
+********************************************************************************
 
 ## Änderungen & Pläne
 
@@ -75,6 +82,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - bessere Darstellung der Messergebnisse
 
+********************************************************************************
+
                           {{1-3}}
 ********************************************************************************
 
@@ -82,12 +91,16 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - Verarbeitung der Taster-Eingaben und weitergabe an die Steuereinheit
 
+********************************************************************************
+
                           {{2-3}}
 ********************************************************************************
 
 **Steuereinheit:**
 
 - Verarbeitung des Signal-Modus und Ausführung der zugehörigen `double` bzw. `float` oder diversen anderen Berechnungen
+
+********************************************************************************
 
 ### Zukünftige Pläne
 
@@ -97,6 +110,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 **Messeinheit:**
 
 - Keine Änderung geplant. Möglicherweise Ausgabeverbesserung: Weitergabe über dritten PIN, ob gerade float/double-Berechungszeit oder Näherungszeit gemessen wird
+
+********************************************************************************
 
                           {{1-3}}
 ********************************************************************************
@@ -109,6 +124,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 >
 >Taster bleiben erhalten, voraussichtlich "Beide gedrückt" als Umschalten zwischen "Joystick-Daten" und "Trigger double/float-Berechnung"
 
+********************************************************************************
+
                           {{2-3}}
 ********************************************************************************
 
@@ -119,3 +136,5 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 >*Zusätzliche Features*
 >
 >Berechnungen float/double bleiben erhalten. (Fragwürdig ob sich der Aufwand lohnt, die Daten hier zu übertragen oder ob das doch am selben Arduino geschehen soll. Generelles Problem ist hier aber sowieso die LED-Ansteuerung über PWM-Signale.)
+
+********************************************************************************
