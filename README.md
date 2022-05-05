@@ -46,9 +46,10 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 **Benutzerschnittstelle:**
 
 - 2 Taster werden zur Kodierung von drei verschiedenen Ausgangssignal-Modi verwendet
-  - `01` Modus 1
-  - `10` Modus 2
-  - `11` Modus 3
+  + `01` Modus 1
+  + `10` Modus 2
+  + `11` Modus 3
+
 - sendet gewählten Modus an Steuereinheit
 
 **Steuereinheit:**
