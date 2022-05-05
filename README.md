@@ -22,9 +22,15 @@ icon: https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_TU_Bergakademie_F
 
 ![es blinkt](docs/es-blinkt.gif)
 
+---
+
 **So funktioniert's:**
 
 Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.org/)-Projekten für den [Arduino Uno](https://store.arduino.cc/products/arduino-uno-rev3).
+
+- [Messeinheit](code/Messeinheit/)
+- [Benutzerschnittstelle](code/Benutzerschnittstelle/)
+- [Steuereinheit](code/Steuereinheit/)
 
 >Wir freuen uns auf Commits, Issues, Teil-Implementationen, Ideen, ...
 
@@ -43,6 +49,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - misst vergangene Zeit zwischen zwei ausgelösten externen Interrupts
 
+---
+
 **Benutzerschnittstelle:**
 
 - 2 Taster werden zur Kodierung von drei verschiedenen Ausgangssignal-Modi verwendet
@@ -51,6 +59,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
   + `11` Modus 3
 
 - sendet gewählten Modus an Steuereinheit
+
+---
 
 **Steuereinheit:**
 
@@ -64,9 +74,13 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - bessere Darstellung der Messergebnisse
 
+---
+
 **Benutzerschnittstelle:**
 
 - Verarbeitung der Taster-Eingaben und weitergabe an die Steuereinheit
+
+---
 
 **Steuereinheit:**
 
@@ -78,6 +92,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - Keine Änderung geplant. Möglicherweise Ausgabeverbesserung: Weitergabe über dritten PIN, ob gerade float/double-Berechungszeit oder Näherungszeit gemessen wird
 
+---
+
 **Benutzerschnittstelle:**
 
 - Joystick und Ultraschallsensor jeweils über `ADC` angeschlossen, Datenübertragung an Steuereinheit
@@ -85,6 +101,8 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 >*Zusätzliche Features*
 >
 >Taster bleiben erhalten, voraussichtlich "Beide gedrückt" als Umschalten zwischen "Joystick-Daten" und "Trigger double/float-Berechnung"
+
+---
 
 **Steuereinheit:**
 
