@@ -16,8 +16,8 @@ void pin_reset(){
     PORTB &= ~(1 << LED_G);
     PORTB &= ~(1 << LED_B);  
     //PORT's resetten
-    PORTD |= (1 << BtoS_1);
-    PORTD |= (1 << BtoS_2);  
+    PORTD &= ~(1 << BtoS_1);
+    PORTD &= ~(1 << BtoS_2);  
 }
 
 
@@ -32,12 +32,12 @@ int main(void){
         }
         else if (PIND & (1 << TASTER_1)){
             PORTB |= (1 << LED_G);  
-            PORTD &= ~(1 << BtoS_1);
+            PORTD |= (1 << BtoS_1);
             input_received();          
         }
         else if (PIND & (1 << TASTER_2)){
             PORTB |= (1 << LED_B);
-            PORTD &= ~(1 << BtoS_2);
+            PORTD |= (1 << BtoS_2);
             input_received();
         }
         else {
