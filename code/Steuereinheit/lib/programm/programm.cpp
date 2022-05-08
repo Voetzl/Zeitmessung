@@ -2,6 +2,7 @@
 #include "initialisation.h"
 #include <util/delay.h>
 
+//Altes Fragment: Rupt-Auslösung durch Taster-Drücker
 /*void derrest(){
     int i = 1;
         while(i == 1){
@@ -31,5 +32,4 @@
         }
 
         _delay_ms(500); //Wartezeit Boot-Up
-}
-*/
+}*/

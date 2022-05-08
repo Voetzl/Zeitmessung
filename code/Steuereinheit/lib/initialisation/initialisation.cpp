@@ -23,14 +23,18 @@ void initialisation(){
     DDRB |= (1 << DDB1);
     
 
-    DDRD |= (1 << RUPT_1);  //Outputs Interrupt-Arduino
-    DDRD |= (1 << RUPT_2);
+    DDRD |= (1 << RUPT_0);  //Outputs Interrupt-Arduino
+    DDRD |= (1 << RUPT_1);
+    PORTD |= (1 << RUPT_0);   //Damit PINS_RUPT am Anfang an
+    PORTD |= (1 << RUPT_1);
+
 
     DDRB &= ~(1 << DATA_1); //Inputs Benutzerschnittstelle
     DDRB &= ~(1 << DATA_2);
+    PORTB |= (1 << DATA_1); //Pull up!!
+    PORTB |= (1 << DATA_2);
 
-    PORTD |= (1 << RUPT_1);   //Damit PINS_RUPT am Anfang an
-    PORTD |= (1 << RUPT_2);
+
 
     led_test();
 }

@@ -35,7 +35,7 @@ ISR(INT1_vect)
   Serial.println("INT1");
   Serial.flush();
 
-  timer_sec = (double)timer_start / (double)timer_max + timer_overflow_counter + (double)timer_end / (double)timer_max;
+  timer_sec = ((double)timer_start / (double)timer_max + timer_overflow_counter + (double)timer_end / (double)timer_max) / 4.0;
 
   Serial.println(timer_overflow_counter);
   Serial.println(timer_start);
