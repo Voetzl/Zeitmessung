@@ -55,11 +55,11 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 - 2 Taster werden zur Kodierung von drei verschiedenen Ausgangssignal-Modi verwendet
 
-| Code | Modus |
-|:---:|:---|
-| `01` | ... |
-| `10` | ... |
-| `11` | ... |
+| Code | Farbe | Pi-Berechnung |
+|:---:|:---|:---|
+| `01` | Blue | float |
+| `10` | Green | double |
+| `11` | Red | both |
 
 - sendet gewählten Modus an Steuereinheit
 
@@ -81,13 +81,13 @@ Dieses Projekt zur Zeitmessung besteht aus drei [PlatformIO](https://platformio.
 
 **Benutzerschnittstelle:**
 
-- Verarbeitung der Taster-Eingaben und weitergabe an die Steuereinheit
+- Nischts
 
 ---
 
 **Steuereinheit:**
 
-- Verarbeitung des Signal-Modus und Ausführung der zugehörigen `double` bzw. `float` oder diverser anderer Berechnungen
+- Vll ne sinnvolle Pi-Berechnung
 
 ### Zukünftige Pläne
 
